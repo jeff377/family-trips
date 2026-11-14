@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宜蘭二日遊行程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm family trip note, calm and easy to read on a phone in LINE
+   IDEA: a printed train ticket stub plus a timetable, like an old Yilan line ticket
+   PICTURE: Guishan Island rising from layered sea at dusk, rice-field band below
+   COLOUR and TYPE: deep sea teal ground, paddy green support, sunset coral accent; Noto Serif TC titles, Noto Sans TC body
+   LAYOUT: hero scene, then two day timetables with hanging times, then reminders and bookings */
+:root{color-scheme:light dark;
+--bg:light-dark(#f6f3ec,#0d1a1d);--card:light-dark(#ffffff,#13262a);--ink:light-dark(#14262a,#e8efe9);
+--mute:light-dark(#566a6c,#a5b8b6);--line:light-dark(#d9d3c4,#27403f);
+--sea:light-dark(#0f5f6b,#5fb3bd);--paddy:light-dark(#4f7a2a,#9cc56b);--coral:light-dark(#d4553a,#f0866b);
+--tag:light-dark(#e6f0ef,#1b3438)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Noto Sans TC",system-ui,sans-serif;overflow-x:clip}
+a{color:var(--sea);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
+.hero{background:#0f5f6b;color:#f4f1e8;position:relative;overflow:hidden}
+.hero-in{max-width:880px;margin:0 auto;padding:clamp(28px,5vw,56px) max(5vw,18px) 0}
+h1{font:700 clamp(32px,6vw,48px)/1.1 "Noto Serif TC",serif;margin:0 0 10px;text-wrap:balance}
+.sub{margin:0;font-size:17px;opacity:.92}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.chip{background:rgba(255,255,255,.14);border-radius:999px;padding:4px 12px;font-size:14px;white-space:nowrap}
+.scene{display:block;width:100%;height:clamp(150px,26vw,230px);margin-top:18px}
+main{max-width:880px;margin:0 auto;padding:0 max(5vw,18px) 56px}
+.day{margin-top:40px}
+.dayhd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:8px}
+h2{font:700 clamp(24px,4vw,32px)/1.2 "Noto Serif TC",serif;margin:0}
+.dayhd span{color:var(--mute);font-size:15px}
+.stops{list-style:none;margin:0;padding:0}
+.stop{display:grid;grid-template-columns:72px minmax(0,1fr);gap:4px 16px;padding:18px 0;border-bottom:1px dashed var(--line)}
+.t{font:700 20px/1.3 "Noto Sans TC",sans-serif;color:var(--sea);white-space:nowrap;font-variant-numeric:tabular-nums}
+.name{font-weight:700;font-size:18px;line-height:1.4}
+.kind{display:inline-block;font-size:13px;font-weight:500;background:var(--tag);color:var(--sea);border-radius:6px;padding:1px 8px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.kind.meal{color:var(--coral)}
+.note{grid-column:2;margin:2px 0 0;color:var(--mute);font-size:15px}
+.alt{grid-column:2;margin:8px 0 0;font-size:15px;background:var(--tag);border-radius:8px;padding:8px 12px}
+.alt b{color:var(--paddy)}
+.box{margin-top:40px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.box h2{font-size:24px;margin-bottom:10px}
+.box ul{margin:0;padding-left:20px}
+.box li{margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mute);font-weight:500;font-size:14px}
+td.tel{white-space:nowrap;font-variant-numeric:tabular-nums}
+.foot{margin-top:28px;color:var(--mute);font-size:13px}
+@media(max-width:600px){.stop{grid-template-columns:58px minmax(0,1fr);gap:2px 12px}.t{font-size:17px}
+.stack thead{display:none}.stack tr{display:grid;padding-block:8px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:4px 0}.stack td::before{content:attr(data-l);color:var(--mute);flex:none}}
+@media(prefers-reduced-motion:no-preference){.sun{animation:rise 2.4s ease-out both}@keyframes rise{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="hero-in">
+<h1>宜蘭二日遊</h1>
+<p class="sub">11/21（六）– 11/22（日）・7 位大人（含 2 位長輩）</p>
+<div class="chips"><span class="chip">住 OA HOTEL 烏石港</span><span class="chip">預報 15–19°C</span><span class="chip">點名稱看介紹</span></div>
+</div>
+<svg class="scene" viewBox="0 0 1200 230" preserveAspectRatio="xMidYMax slice" role="img" aria-label="海上的龜山島與蘭陽平原稻田">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f5f6b"/><stop offset="1" stop-color="#2f8a8f"/></linearGradient>
+<linearGradient id="isl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d4a4f"/><stop offset="1" stop-color="#103236"/></linearGradient></defs>
+<rect width="1200" height="230" fill="url(#sky)"/>
+<circle class="sun" cx="930" cy="88" r="34" fill="#f0866b"/>
+<path d="M600 150 C640 132 668 92 700 62 C716 48 730 50 744 66 C770 96 800 118 860 128 C900 134 930 140 960 150 Z" fill="url(#isl)"/>
+<path d="M700 62 C716 48 730 50 744 66 C736 64 724 60 712 66 Z" fill="#3c7a7c" opacity=".7"/>
+<path d="M455 150 C480 140 505 136 530 142 C548 146 560 148 575 150 Z" fill="#1d4a4f"/>
+<rect y="148" width="1200" height="82" fill="#0b4c56"/>
+<g fill="none" stroke="#7cc2c6" stroke-width="2" stroke-linecap="round" opacity=".55">
+<path d="M80 168h90M260 176h120M520 166h70M760 172h110M1000 168h80"/><path d="M160 190h70M420 196h90M880 192h60M1080 188h70"/></g>
+<path d="M0 206 C200 196 400 214 600 204 C800 194 1000 212 1200 202 V230 H0 Z" fill="#4f7a2a"/>
+<g stroke="#9cc56b" stroke-width="2" opacity=".6"><path d="M40 222v-8M90 224v-9M140 221v-8M190 223v-9M240 222v-8M290 224v-9M340 221v-8M390 223v-9M440 222v-8M490 224v-9M540 221v-8M590 223v-9M640 222v-8M690 224v-9M740 221v-8M790 223v-9M840 222v-8M890 224v-9M940 221v-8M990 223v-9M1040 222v-8M1090 224v-9M1140 221v-8"/></g>
+</svg>
+</header>
+
+<main>
+<section class="day" id="day1">
+<div class="dayhd"><h2>Day 1・11/21（六）</h2><span>頭城、礁溪、宜蘭市</span></div>
+<ol class="stops">
+<li class="stop"><div class="t">13:00</div><div class="name"><a target="_blank" rel="noopener" href="https://dribs-drabs.com/wus_harbour/">伍參港鮮魚定食料理</a><span class="kind meal">午餐</span></div><p class="note">外澳海邊的無菜單海鮮定食，用當日漁獲。需先訂位。</p></li>
+<li class="stop"><div class="t">14:30</div><div class="name"><a target="_blank" rel="noopener" href="https://bunnyann.tw/bunnyann247/">金車生技水產養殖研發中心</a></div><p class="note">室內水族館和鯊魚池，營業到 17:00。長輩累了可以跳過，直接回飯店休息。</p></li>
+<li class="stop"><div class="t">16:00</div><div class="name"><a target="_blank" rel="noopener" href="https://supertaste.tvbs.com.tw/travel/336493">入住 OA HOTEL</a><span class="kind">住宿</span></div><p class="note">入住 15:00、退房 11:00。可泡頂樓露天風呂休息。不提供牙刷、拖鞋，請自備。</p></li>
+<li class="stop"><div class="t">17:30</div><div class="name"><a target="_blank" rel="noopener" href="https://bunnyann.tw/east-gate/">宜蘭東門夜市</a><span class="kind meal">晚餐</span></div><p class="note">開車約 30 分鐘。必吃龍鳳腿、彭記蔥油餅、嘟好燒。停宜蘭火車站旁的停車場，長輩可先坐下，年輕人買回來分。</p></li>
+<li class="stop"><div class="t">19:30</div><div class="name"><a target="_blank" rel="noopener" href="https://supertaste.tvbs.com.tw/hot/338499">淡江大學蘭陽校園</a><span class="kind">夜景</span></div><p class="note">開放到 21:00。大門要換證，停車後走約 5 分鐘到觀景平台，晚上很暗請開手電筒。</p><p class="alt"><b>天氣不好</b>：起霧或長輩累了就不上山，直接回飯店。</p></li>
+<li class="stop"><div class="t">20:45</div><div class="name">回 OA HOTEL</div><p class="note">早點休息，明天的早餐是重點。</p></li>
+</ol>
+</section>
+
+<section class="day" id="day2">
+<div class="dayhd"><h2>Day 2・11/22（日）</h2><span>五結、三星、羅東</span></div>
+<ol class="stops">
+<li class="stop"><div class="t">07:30</div><div class="name">OA HOTEL 早餐<span class="kind meal">早餐</span></div><p class="note">早餐 6:30–10:00，自助式，菜色豐富，慢慢吃。</p></li>
+<li class="stop"><div class="t">10:00</div><div class="name">退房南下</div><p class="note">開車約 30–40 分鐘到五結。</p></li>
+<li class="stop"><div class="t">10:40</div><div class="name"><a target="_blank" rel="noopener" href="https://bunnyann.tw/wintigerfood/">虎牌米粉觀光工廠</a></div><p class="note">室內懷舊街景，可以拍照，有米粉試吃。吃少量就好，留胃給午餐。</p></li>
+<li class="stop"><div class="t">12:30</div><div class="name"><a target="_blank" rel="noopener" href="https://bunnyann.tw/sloth-restauran2025d03/">樹懶餐廳</a><span class="kind meal">午餐</span></div><p class="note">在三星，邊吃邊看動物，可以餵泰迪羊、看樹懶。65 歲以上有優待票。</p></li>
+<li class="stop"><div class="t">14:30</div><div class="name"><a target="_blank" rel="noopener" href="https://bunnyann.tw/luodong/">羅東林業文化園區</a></div><p class="note">平坦步道、貯木池和老火車，長輩好走，累了隨時可坐。</p><p class="alt"><b>下雨改去</b>：<a target="_blank" rel="noopener" href="https://travel.yam.com/article/116115">二結穀倉稻農文化館</a>，室內，門票 50 元可折抵飲料。</p></li>
+<li class="stop"><div class="t">17:00</div><div class="name"><a target="_blank" rel="noopener" href="https://travel.yam.com/post/139">百匯窯烤雞餐廳</a><span class="kind meal">晚餐</span></div><p class="note">在五結，龍眼木窯烤雞是招牌，大圓桌適合一家人。需訂位並請店家先留雞。</p></li>
+<li class="stop"><div class="t">19:00</div><div class="name">上國 5 回程</div><p class="note">避開週日傍晚的回堵高峰。</p></li>
+</ol>
+</section>
+
+<section class="box">
+<h2>出發前提醒</h2>
+<ul>
+<li>預報 11/19 起轉涼，頭城約 17–19°C、羅東約 15–17°C。海邊和山上風大，請帶防風外套和摺疊傘。</li>
+<li>OA HOTEL 不主動提供牙刷、牙膏、拖鞋等備品，請自己帶。</li>
+<li>7 個人開兩台車，晚餐停車位容易滿，盡量準時到。</li>
+<li>出發前兩天會再看一次天氣，下雨就改走備案。</li>
+</ul>
+</section>
+
+<section class="box">
+<h2>訂位清單</h2>
+<table class="stack">
+<thead><tr><th>日期</th><th>餐廳</th><th>時間</th><th>電話</th></tr></thead>
+<tbody>
+<tr><td data-l="日期">11/21（六）</td><td data-l="餐廳">伍參港鮮魚定食料理</td><td data-l="時間">13:00</td><td data-l="電話" class="tel">訂位時確認</td></tr>
+<tr><td data-l="日期">11/22（日）</td><td data-l="餐廳">百匯窯烤雞餐廳</td><td data-l="時間">17:00</td><td data-l="電話" class="tel">03-950-1386</td></tr>
+</tbody>
+</table>
+</section>
+
+<p class="foot">各點連結為部落客或旅遊媒體的介紹文章，營業時間以店家當天公告為準。</p>
+</main>
+</body>
+</html>
